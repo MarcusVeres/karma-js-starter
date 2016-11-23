@@ -18,15 +18,14 @@ describe( 'Script Testing' , function() {
         fixture.cleanup();
     });
 
-    describe( 'Basic Testing' , function() {
-
-
-    });
-
     describe( 'Testing exposed functions' , function() {
 
         it( 'should return sayHello' , function() {
             expect( myThing.sayHello() ).toBe( "Hello" );
+        });
+
+        it( 'should be able to read exposed function' , function() {
+            expect( myThing.exposedFunction ).not.toBe( null );
         });
 
     });
