@@ -36,6 +36,16 @@ module.exports = function(config) {
         '**/*.json' : ['json_fixtures'] , 
     },
 
+    // this fixes a bug that the fucking asshole developer didn't update in the documentation since 2015...
+    // https://github.com/billtrik/karma-fixture/issues/10
+    // this is why people don't test javascript.. the testing libraries aren't fucking tested!
+    jsonFixturesPreprocessor: {
+        variableName: '__json__',
+        transformPath: function(path) {
+            return path + '.js';
+        }
+    },
+
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
